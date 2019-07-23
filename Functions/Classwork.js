@@ -96,24 +96,58 @@ console.log(censor(wordArray, bannedWords), wordArray);
 
 // Write a function that accepts two arguments (names can be changed):a and b. Cycle through all numbers between a and b (inclusive) and if the number is divisible by 2 log "Fizz" if the number is divisible by 3 log "Buzz" if it is divisible by both log "FizzBuzz" otherwise log the number. if a==b log nothing, if a > b count down otherwise count up
 
-function fizzBuzz(a,b){
-    if (a == b){
-        return;
-    } else if (a > b){
-        for (i = (a - 1); i > b; i--){
-            i % 3 == 0 ? console.log("Fizz") : "";
-            i % 5 == 0 ? console.log("Buzz") : "";
-            i % 5 == 0 && i % 3 == 0 ? console.log("FizzBuzz") : console.log(i);
-        }
-    } else {
-        for (i = (a + 1); i < b; i++){
-            i % 3 == 0 ? console.log("Fizz") : "";
-            i % 5 == 0 ? console.log("Buzz") : "";
-            i % 5 == 0 && i % 3 == 0 ? console.log("FizzBuzz") : console.log(i);
-        }
-    }
+// function logFizzBuzz(i){
+//     if (i % 5 === 0 && i % 3 === 0){
+//         console.log("FizzBuzz");
+//     } else if (i % 3 === 0){
+//         console.log("Fizz");
+//     } else if (i % 5 === 0){
+//         console.log("Buzz");
+//     } else {
+//         console.log(i);
+//     }
+// }
+// function fizzBuzz(a,b){
+//     if (a === b){
+//         return;
+//     } else if (a > b){
+//         for (i = a; i >= b; i--){
+//             logFizzBuzz(i);
+//         }
+//     } else if (a < b) {
+//         for (i = a; i <= b; i++){
+//             logFizzBuzz(i);
+//             // Ternary doesnt really work with dis
+//             // i % 5 === 0 && i % 3 === 0 ? console.log("FizzBuzz") : "";
+//             // i % 3 === 0 ? console.log("Fizz") : "";
+//             // i % 5 == 0 ? console.log("Buzz") : "";
+//         }
+//     } 
+// }
+// fizzBuzz(4, 27);
+
+
+// Write a function that takes a day month and year (in whatever format you choose) and return what day of the week that was. Try doing this both WITH and WITHOUT the use of built in libraries.
+
+var month = "02";
+var day = "04";
+var year = "1970";
+// var weekday = new Array(7);
+//     weekday[0] =  "Sunday";
+//     weekday[1] = "Monday";
+//     weekday[2] = "Tuesday";
+//     weekday[3] = "Wednesday";
+//     weekday[4] = "Thursday";
+//     weekday[5] = "Friday";
+//     weekday[6] = "Saturday";
+
+var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function dayOfWeekLibrary(m, d, y){
+    var d = new Date(`${m}/${d}/${y}`);
+    console.log(weekday[d.getDay()]);
 }
-fizzBuzz(70, 50);
+dayOfWeekLibrary(month, day, year);
 
-
-// Write a function that takes a day month and year (in whatever format you choose) and return what day that was. Try doing this both WITH and WITHOUT the use of built in libraries.
+// Oh no why
+// function dayOfWeekSansLibrary(m, d, y){}
